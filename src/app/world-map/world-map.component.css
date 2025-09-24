@@ -1,0 +1,16 @@
+svg path {
+cursor: pointer;
+fill: #fafafa;
+stroke: #cccccc
+}
+
+svg path:hover {
+  fill: #ff9900;
+  stroke: #ffd700;
+}
+
+svg path.selected {
+  fill: #ff9900;
+  stroke: #ffd700;
+}
+

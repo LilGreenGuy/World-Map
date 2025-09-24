@@ -1,0 +1,13 @@
+<div class="card" *ngIf="worldBankData && worldBankData[1]">
+    <div class="card-body">
+        <h3 class="card-title">{{ worldBankData[1][0].name }}</h3>
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">Capital: {{ worldBankData[1][0].capitalCity }}</li>
+            <li class="list-group-item">Country Code: {{ worldBankData[1][0].id }}</li>
+            <li class="list-group-item">Region: {{ worldBankData[1][0].region.value }}</li>
+            <li class="list-group-item">Income Level: {{ worldBankData[1][0].incomeLevel.value }}</li>
+            <li class="list-group-item">Longitude: {{ worldBankData[1][0].longitude }}</li>
+            <li class="list-group-item">Latitude: {{ worldBankData[1][0].latitude }}</li>
+        </ul>
+    </div>
+</div>
