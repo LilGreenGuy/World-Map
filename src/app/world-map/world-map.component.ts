@@ -12,6 +12,7 @@ import { CountryDisplayComponent } from '../country-display/country-display.comp
 })
 
 export class WorldMapComponent implements OnInit {
+  // Data from the World Bank API for the selected country
   worldBankData: any;
   countryNameValue: string = '';
   mouseX: number = 0;
@@ -21,8 +22,10 @@ export class WorldMapComponent implements OnInit {
 
   hoverCountry(event: MouseEvent) {
     const target = event.target as SVGPathElement;
+    // The 10 pixel offset is to avoid the mouse pointer covering the text
     this.mouseX = event.clientX + 10;
     this.mouseY = event.clientY + 10;
+    // Only show the country name if hovering over a country path
     if (target.tagName === 'path' && event.type !== 'mouseleave') {
       const name = target.getAttribute('name') || '';
       this.countryNameValue = name;
@@ -32,6 +35,7 @@ export class WorldMapComponent implements OnInit {
   }
 
   selectCountry(event: MouseEvent) {
+    // Only select the country if clicking on a country path
     const target = event.target as SVGPathElement;
     if (target.tagName === 'path') {
       const svg = target.ownerSVGElement;
